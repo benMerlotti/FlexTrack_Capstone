@@ -1,0 +1,42 @@
+html {
+  background-color: var(--loginBackground);
+}
+
+.login-page {
+  background-color: var(--loginBackground);
+  margin: 0;
+  padding: 0;
+  height: 100vh
+}
+
+.auth-container {
+  border: 1px solid gray;
+  margin: 3rem 15rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.header {
+  color: white;
+  font-size: 2rem;
+}
+
+.auth-form {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form-input {
+  padding: 0.25rem;
+}
+
+.register-link {
+  color: white;
+  text-align: center;
+}
+
+.auth-fieldset {
+  margin: 0.25rem 0rem;
+}

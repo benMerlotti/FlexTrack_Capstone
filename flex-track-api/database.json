@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "email": "benmerlotti@gmail.com",
+      "fullName": "Ben Merlotti",
+      "cohort": 3,
+      "id": 1
+    }
+  ],
+  "days": [
+    {
+      "id": 1,
+      "name": "Monday"
+    },
+    {
+      "id": 2,
+      "name": "Tuesday"
+    },
+    {
+      "id": 3,
+      "name": "Wednesday"
+    },
+    {
+      "id": 4,
+      "name": "Thursday"
+    },
+    {
+      "id": 5,
+      "name": "Friday"
+    }
+  ],
+  "routines": [
+    {
+      "id": 1,
+      "name": "Leg Day",
+      "userId": 1,
+      "day": "Monday",
+      "createdAt": "2024-09-27"
+    },
+    {
+      "id": 2,
+      "name": "Upper Body",
+      "userId": 2,
+      "day": "Wednesday",
+      "createdAt": "2024-09-26"
+    }
+  ],
+  "exercises": [
+    {
+      "id": 1,
+      "name": "Squat"
+    },
+    {
+      "id": 2,
+      "name": "Bench Press"
+    },
+    {
+      "id": 3,
+      "name": "Deadlift"
+    },
+    {
+      "id": 4,
+      "name": "Pull-ups"
+    }
+  ],
+  "routineExercises": [
+    {
+      "id": 1,
+      "routineId": 1,
+      "exerciseId": 1,
+      "sets": 3,
+      "reps": 10,
+      "weight": 200
+    },
+    {
+      "id": 2,
+      "routineId": 1,
+      "exerciseId": 3,
+      "sets": 3,
+      "reps": 8,
+      "weight": 250
+    },
+    {
+      "id": 3,
+      "routineId": 2,
+      "exerciseId": 2,
+      "sets": 4,
+      "reps": 12,
+      "weight": 150
+    },
+    {
+      "id": 4,
+      "routineId": 2,
+      "exerciseId": 4,
+      "sets": 3,
+      "reps": 10,
+      "weight": 150
+    }
+  ]
+}

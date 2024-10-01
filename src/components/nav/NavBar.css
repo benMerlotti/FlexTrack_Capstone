@@ -1,0 +1,57 @@
+/* NavBar Styles */
+.navbar {
+    background-color: #020f23; /* Dark blue background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between menu items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-list-item {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .navbar-list-item:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-list-item::after {
+    content: '➜';
+    color: #0C1A2E;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .navbar-list-item:hover::after {
+    opacity: 1;
+  }
+  
+  /* Logo */
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+  }
+  
+  .navbar .logo span {
+    color: #e6e6e6;
+  }
+  
