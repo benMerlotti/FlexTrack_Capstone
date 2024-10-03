@@ -20,50 +20,84 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #3d3f4e;
   }
+
+  .routine-exercises-header {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+  }
+
+  .routine-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+  }
+
+  .routine-header {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 20px
+  }
   
   .routine-name {
+    color: white;
     font-size: 24px;
-    color: #fff;
     margin-bottom: 20px;
   }
   
   .routine-exercises {
-    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust spacing between exercise items */
+  }
+
+  header {
+    font-size: 20px;
   }
   
-  table {
-    width: 100%;
-    color: #fff;
-    border-spacing: 0;
-    text-align: left;
+  .routine-exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  table th, table td {
-    padding: 10px;
-    font-weight: normal;
+  .routine-exercise-name {
+    flex: 1; /* Adjust the space allocation */
   }
   
-  table th {
+  .routine-exercise-sets,
+  .routine-exercise-reps,
+  .routine-exercise-weight {
+    flex: 1;
+    display: flex;
+    gap: 20px
+  }
+  
+  span {
+    color: white;
     font-weight: bold;
   }
   
-  .routine-actions {
+  .exercise-edit-btn {
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-bottom: 20px;
+    /* You can add other styling like padding, background color, etc. */
   }
   
-  .edit-btn, .delete-btn {
+  
+  .routine-edit-btn, .routine-delete-btn, .exercise-edit-btn {
     background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 0px 10px;
     border-radius: 5px;
     cursor: pointer;
   }
   
-  .edit-btn:hover, .delete-btn:hover {
+  .routine-edit-btn:hover, .routine-delete-btn:hover, .exercise-edit-btn:hover {
     background-color: #3d3f4e;
   }
   
@@ -97,6 +131,29 @@
   
   .day-btn:hover {
     background-color: #3d3f4e;
+  }
+
+  .day-btn.assigned {
+    background-color: green;
+    color: white;
+  }
+  
+  .day-btn:not(.assigned):hover, .unassign-btn:hover {
+    background-color: #3d3f4e;
+  }
+  
+
+  .unassign-btn-container {
+    margin-top: 20px;
+  }
+
+  .unassign-btn {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
   

@@ -4,7 +4,10 @@ import { NavBar } from "../components/nav/NavBar";
 import { CreateRoutine } from "../components/createRoutine/CreateRoutine";
 import { MyRoutines } from "../components/myRoutines/MyRoutines";
 import { useEffect, useState } from "react";
-import { CreateExercise } from "../components/createExercise/CreateExercise";
+import { AddExercise } from "../components/addExercise/AddExercise";
+import { Days } from "../components/days/Days";
+import { EditRoutine } from "../components/editRoutine/EditRoutine";
+import { EditExercise } from "../components/editExercise/EditExercise";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -37,8 +40,20 @@ export const ApplicationViews = () => {
           element={<MyRoutines currentUser={currentUser} />}
         />
         <Route
-          path="create-exercise"
-          element={<CreateExercise currentUser={currentUser} />}
+          path="add-exercises/:routineId"
+          element={<AddExercise currentUser={currentUser} />}
+        />
+        <Route
+          path="days/:dayId"
+          element={<Days currentUser={currentUser} />}
+        />
+        <Route
+          path="edit-routine/:routineId"
+          element={<EditRoutine currentUser={currentUser} />}
+        />
+        <Route
+          path="edit-exercise/:routineExerciseId"
+          element={<EditExercise currentUser={currentUser} />}
         />
       </Route>
     </Routes>

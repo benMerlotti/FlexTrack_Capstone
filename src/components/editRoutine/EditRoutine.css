@@ -1,14 +1,13 @@
 .create-routine-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center horizontally */
-    height: 50vh;           /* Full viewport height */
-  }
-
-  .create-routine-sub-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    background-color: #020f23;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 0 auto;
   }
   
   h1, h2 {
@@ -25,23 +24,11 @@
     max-width: 400px;
   }
   
-.create-routine-form {
-    margin-bottom: 0px;
+  form {
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: flex-start;
-  }
-
-  .create-routine-input{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    color: white;
-    width: 400px;
-    background-color: transparent;
-    border: solid, white, 1px;
-    border-radius: 4px;
   }
   
   h1 {
@@ -124,27 +111,22 @@
     background-color: #508a95;
   }
   
-  button.save-routine-btn, button.cancel-routine-btn {
-    padding: 5px 10px;
+  button.save-btn, button.cancel-btn {
+    padding: 10px 20px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     margin-top: 20px;
   }
-
-  .create-routine-actions{
-    display: flex;
-    gap: 10px
+  
+  button.save-btn {
+    background-color: #4caf50;
+    color: white;
   }
   
-  button.save-routine-btn {
-    background-color: transparent;
-    border: solid, white, 1px;
-  }
-  
-  button.cancel-routine-btn {
-    background-color: transparent;
-    border: solid, white, 1px;
+  button.cancel-btn {
+    background-color: #555555;
+    color: white;
   }
   
   button:hover {

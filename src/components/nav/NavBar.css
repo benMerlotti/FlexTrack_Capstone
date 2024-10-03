@@ -2,11 +2,13 @@
 .navbar {
     background-color: #020f23; /* Dark blue background */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: center;
     padding: 20px 40px;
   }
+
+  .navbar-logo {
+  height: 20px; /* Adjust the size of your logo */
+  margin-right: 20px;
+}
   
   .navbar-list {
     list-style: none;
@@ -53,5 +55,14 @@
   
   .navbar .logo span {
     color: #e6e6e6;
+  }
+
+  .navbar-logout {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    margin-left: 65px;
   }
   

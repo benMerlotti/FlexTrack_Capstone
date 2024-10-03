@@ -31,18 +31,11 @@
   ],
   "routines": [
     {
-      "id": 1,
-      "name": "Leg Day",
+      "name": "Chest / Triceps",
       "userId": 1,
       "day": "Monday",
-      "createdAt": "2024-09-27"
-    },
-    {
-      "id": 2,
-      "name": "Upper Body",
-      "userId": 2,
-      "day": "Wednesday",
-      "createdAt": "2024-09-26"
+      "createdAt": "2024-10-03",
+      "id": 3
     }
   ],
   "exercises": [
@@ -60,41 +53,73 @@
     },
     {
       "id": 4,
-      "name": "Pull-ups"
+      "name": "Tricep-Pulldowns"
+    },
+    {
+      "id": 5,
+      "name": "Dumbell ChestPress"
+    },
+    {
+      "id": 6,
+      "name": "Dips"
+    },
+    {
+      "id": 7,
+      "name": "Shoulder Press"
+    },
+    {
+      "id": 8,
+      "name": "Chest Cable Fly"
     }
   ],
   "routineExercises": [
     {
-      "id": 1,
-      "routineId": 1,
-      "exerciseId": 1,
-      "sets": 3,
-      "reps": 10,
-      "weight": 200
-    },
-    {
-      "id": 2,
-      "routineId": 1,
-      "exerciseId": 3,
+      "routineId": 3,
+      "exerciseId": 2,
       "sets": 3,
       "reps": 8,
-      "weight": 250
+      "weight": 145,
+      "id": 3
     },
     {
-      "id": 3,
-      "routineId": 2,
-      "exerciseId": 2,
-      "sets": 4,
-      "reps": 12,
-      "weight": 150
-    },
-    {
-      "id": 4,
-      "routineId": 2,
+      "routineId": 3,
       "exerciseId": 4,
       "sets": 3,
-      "reps": 10,
-      "weight": 150
+      "reps": 12,
+      "weight": 50,
+      "id": 4
+    },
+    {
+      "routineId": 3,
+      "exerciseId": 5,
+      "sets": 3,
+      "reps": 12,
+      "weight": 35,
+      "id": 5
+    },
+    {
+      "routineId": 3,
+      "exerciseId": 6,
+      "sets": 3,
+      "reps": 12,
+      "weight": 130,
+      "id": 6
+    },
+    {
+      "routineId": 3,
+      "exerciseId": 7,
+      "sets": 3,
+      "reps": 12,
+      "weight": 70,
+      "id": 7
+    },
+    {
+      "routineId": 3,
+      "exerciseId": 8,
+      "sets": 3,
+      "reps": 12,
+      "weight": 45,
+      "id": 8
     }
   ]
 }
