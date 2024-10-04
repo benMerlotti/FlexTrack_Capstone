@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./EditRoutine.css";
-import { renameRoutine } from "../../services/routineService";
+import { renameRoutine } from "../../../services/routineService";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const EditRoutine = ({ currentUser }) => {
@@ -17,10 +17,11 @@ export const EditRoutine = ({ currentUser }) => {
 
   return (
     <div className="create-routine-container">
-      <section>
-        <form>
+      <section className="create-routine-sub-container">
+        <form className="create-routine-form">
           <h1>Update routine name</h1>
           <input
+            className="create-routine-input"
             onChange={(event) => {
               const routineCopy = { ...routineName };
               routineCopy.name = event.target.value;
@@ -28,10 +29,15 @@ export const EditRoutine = ({ currentUser }) => {
             }}
           ></input>
         </form>
-        <button className="save-btn" onClick={handleSaveNewRoutineName}>
-          Save new routine name
-        </button>
-        <button className="cancel-btn">Cancel</button>
+        <div className="create-routine-actions">
+          <button
+            className="save-routine-btn"
+            onClick={handleSaveNewRoutineName}
+          >
+            Save new routine name
+          </button>
+          <button className="cancel-routine-btn">Cancel</button>
+        </div>
       </section>
     </div>
   );

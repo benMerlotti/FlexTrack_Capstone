@@ -4,14 +4,14 @@ import {
   deleteRoutine,
   getAllRoutineExercises,
   getAllRoutines,
-} from "../../services/routineService";
+} from "../../../services/routineService";
 import "./MyRoutines.css";
-import { getAllDays } from "../../services/dayService";
+import { getAllDays } from "../../../services/dayService";
 import {
   deleteExerciseFromRoutine,
   deleteRoutineExercise,
   getAllRoutineExercisesByRoutineId,
-} from "../../services/exerciseService";
+} from "../../../services/exerciseService";
 import { useNavigate } from "react-router-dom";
 
 export const MyRoutines = () => {
@@ -32,7 +32,7 @@ export const MyRoutines = () => {
     getAllRoutineExercises().then((data) => {
       setRoutineExercises(data);
     });
-  }, []);
+  }, [routineExercises]);
 
   useEffect(() => {
     getAllDays().then((data) => {

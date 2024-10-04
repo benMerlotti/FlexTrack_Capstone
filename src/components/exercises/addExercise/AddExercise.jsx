@@ -3,13 +3,13 @@ import {
   deleteExerciseFromRoutine,
   getAllExercises,
   saveExerciseToRoutine,
-} from "../../services/exerciseService";
+} from "../../../services/exerciseService";
 import "./AddExercise.css";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   getAllRoutineExercises,
   getAllRoutines,
-} from "../../services/routineService";
+} from "../../../services/routineService";
 
 export const AddExercise = () => {
   const [allExercises, setAllExercises] = useState([]);
@@ -94,8 +94,10 @@ export const AddExercise = () => {
   };
 
   return (
-    <>
-      <h1>{currentRoutine ? currentRoutine.name : "Loading..."}</h1>
+    <div className="add-exercise-container">
+      <h1 className="routine-name">
+        {currentRoutine ? currentRoutine.name : "Loading..."}
+      </h1>
 
       <div className="current-routine-container">
         <ul className="current-routine">
@@ -108,13 +110,13 @@ export const AddExercise = () => {
                       {current.exercise?.name}
                     </span>
                     <span className="exercise-details">
-                      Sets: {current.sets}
+                      Sets: <div className="result">{current.sets}</div>
                     </span>
                     <span className="exercise-details">
-                      Reps: {current.reps}
+                      Reps: <div className="result">{current.reps}</div>
                     </span>
                     <span className="exercise-details">
-                      Weight: {current.weight}
+                      Weight: <div className="result">{current.weight}</div>
                     </span>
                   </div>
                 </li>
@@ -129,64 +131,71 @@ export const AddExercise = () => {
           })}
         </ul>
       </div>
-
-      <form className="add-exercise-container">
-        <select onChange={handleExerciseSelect}>
-          <option value="Choose exercise">Choose exercise</option>
-          {allExercises.map((ex) => (
-            <option value={ex.name} key={ex.id}>
-              {ex.name}
-            </option>
-          ))}
-        </select>
-      </form>
-
-      <form className="add-exercise-form">
-        <div className="exercise-controls">
-          <label>Sets</label>
-          <input
-            type="number"
-            name="sets"
-            onChange={(event) => {
-              const newExerciseCopy = { ...newExercise };
-              newExerciseCopy.sets = event.target.value;
-              setNewExercise(newExerciseCopy);
-            }}
-          />
-          <label>Reps</label>
-          <input
-            type="number"
-            name="reps"
-            onChange={(event) => {
-              const newExerciseCopy = { ...newExercise };
-              newExerciseCopy.reps = event.target.value;
-              setNewExercise(newExerciseCopy);
-            }}
-          />
-          <label>Weight</label>
-          <input
-            type="number"
-            name="weight"
-            onChange={(event) => {
-              const newExerciseCopy = { ...newExercise };
-              newExerciseCopy.weight = event.target.value;
-              setNewExercise(newExerciseCopy);
-            }}
-          />
-          <button
-            className="edit-btn"
-            type="submit"
-            onClick={handleSaveExercise}
+      <div className="exercise-container">
+        <form className="choose-exercise-form">
+          <select
+            className="choose-exercise-menu"
+            onChange={handleExerciseSelect}
           >
-            Add to routine
-          </button>
-        </div>
-      </form>
+            <option value="Choose exercise">Choose exercise</option>
+            {allExercises.map((ex) => (
+              <option value={ex.name} key={ex.id}>
+                {ex.name}
+              </option>
+            ))}
+          </select>
+        </form>
+
+        <form className="add-exercise-form">
+          <div className="exercise-controls">
+            <label>Sets</label>
+            <input
+              className="exercise-input"
+              type="number"
+              name="sets"
+              onChange={(event) => {
+                const newExerciseCopy = { ...newExercise };
+                newExerciseCopy.sets = event.target.value;
+                setNewExercise(newExerciseCopy);
+              }}
+            />
+            <label>Reps</label>
+            <input
+              className="exercise-input"
+              type="number"
+              name="reps"
+              onChange={(event) => {
+                const newExerciseCopy = { ...newExercise };
+                newExerciseCopy.reps = event.target.value;
+                setNewExercise(newExerciseCopy);
+              }}
+            />
+            <label>Weight</label>
+            <input
+              className="exercise-input"
+              type="number"
+              name="weight"
+              onChange={(event) => {
+                const newExerciseCopy = { ...newExercise };
+                newExerciseCopy.weight = event.target.value;
+                setNewExercise(newExerciseCopy);
+              }}
+            />
+            <button
+              className="add-btn"
+              type="submit"
+              onClick={handleSaveExercise}
+            >
+              Add to routine
+            </button>
+          </div>
+        </form>
+      </div>
       <div className="save-cancel-btn-container">
         <button className="save-btn" onClick={handleSaveRoutine}>
           Save Routine
         </button>
       </div>
-    </>
+    </div>
   );
 };

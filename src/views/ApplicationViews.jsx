@@ -1,13 +1,13 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { Dashboard } from "../components/dashboard/dashboard";
 import { NavBar } from "../components/nav/NavBar";
-import { CreateRoutine } from "../components/createRoutine/CreateRoutine";
-import { MyRoutines } from "../components/myRoutines/MyRoutines";
+import { CreateRoutine } from "../components/routines/createRoutine/CreateRoutine";
+import { MyRoutines } from "../components/routines/myRoutines/MyRoutines";
 import { useEffect, useState } from "react";
-import { AddExercise } from "../components/addExercise/AddExercise";
+import { AddExercise } from "../components/exercises/addExercise/AddExercise";
 import { Days } from "../components/days/Days";
-import { EditRoutine } from "../components/editRoutine/EditRoutine";
-import { EditExercise } from "../components/editExercise/EditExercise";
+import { EditRoutine } from "../components/routines/editRoutine/EditRoutine";
+import { EditExercise } from "../components/exercises/editExercise/EditExercise";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});

@@ -1,0 +1,168 @@
+.add-exercise-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+ .routine-name {
+    display: flex;
+    justify-content: center;
+}
+
+.current-routine {
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.added-exercise {
+    display: flex;
+    flex-direction: row; /* Ensures exercises are in a row */
+    justify-content: space-between; /* Space out the content evenly */
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%; /* Make sure it stretches to full width */
+}
+
+
+.current-routine-item {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    border: .5px solid white;
+    border-radius: 5px;
+    width: 100%; /* Full width for better alignment */
+    padding: 5px;
+    margin: 0px;
+}
+
+
+.exercise-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Adds space between the details */
+}
+
+.exercise-details {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.exercise-name {
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.result {
+    padding-left: 5px;
+    min-width: 40px; /* Ensures consistent spacing for each result */
+    text-align: center; /* Centers the text within each result block */
+}
+
+
+  .choose-exercise-menu {
+    display: flex;
+    color: white;
+    background-color: transparent;
+    height: 35px;
+    width: 150px;
+  }
+
+  .exercise-container {
+    display: flex;
+  }
+
+  .choose-exercise-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0
+  }
+
+  .add-exercise-form {
+    display: flex;
+    flex-direction: row;
+    margin: 0px
+  }
+  
+  .exercise-controls {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between controls */
+  }
+  
+  .exercise-controls div {
+    font-weight: bold;
+  }
+  
+  .exercise-controls input {
+    color: white;
+    background-color: transparent;
+    width: 50px;
+    padding: 0px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .save-cancel-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .add-btn {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .edit-btn, .delete-btn, .save-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    margin-left: 25px;
+    height: 25px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+  }
+  
+  .edit-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  
+  .delete-btn {
+    color: white;
+    margin-left: 10px;
+    background-color: transparent;
+    border: 1px solid white; /* To keep the button style transparent */
+}
+  
+  .delete-btn:hover {
+    background-color: #e53935; /* Darker red */
+  }
+  

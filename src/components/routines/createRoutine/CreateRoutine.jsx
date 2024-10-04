@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./CreateRoutine.css";
-import { saveRoutine } from "../../services/routineService";
+import { saveRoutine } from "../../../services/routineService";
 import { useNavigate } from "react-router-dom";
 
 export const CreateRoutine = ({ currentUser }) => {

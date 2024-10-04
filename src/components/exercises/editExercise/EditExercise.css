@@ -1,0 +1,79 @@
+.edit-exercise-container {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+}
+
+.edit-exercise-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-menu-input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-exercise-menu {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: transparent;
+    width: 150px;
+    height: 30px;
+}
+
+.edit-exercise-controls {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between controls */
+  }
+
+.edit-exercise-controls input {
+    display: flex;
+    color: white;
+    background-color: transparent;
+    width: 50px;
+    padding: 0px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+.btn-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.update-exercise-btn, .cancel-exercise-btn {
+    background-color: transparent;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    margin-top: 20px;
+    height: 25px;
+    font-size: 15px;
+    border: 1px, solid, white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+}
+
+.cancel-exercise-btn {
+    width: 100px;
+}

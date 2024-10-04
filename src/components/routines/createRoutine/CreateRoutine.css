@@ -1,0 +1,78 @@
+.create-routine-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    height: 50vh;           /* Full viewport height */
+  }
+
+  .create-routine-sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  h1 {
+    color: #ffffff;
+  }
+  
+  input[type="text"], select {
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+.create-routine-form {
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .create-routine-input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    color: white;
+    width: 400px;
+    background-color: transparent;
+    border: solid, white, 1px;
+    border-radius: 4px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .create-routine-actions{
+    display: flex;
+    gap: 10px
+  }
+
+  button.save-routine-btn, button.cancel-routine-btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button.save-routine-btn {
+    background-color: transparent;
+    border: solid, white, 1px;
+  }
+  
+  button.cancel-routine-btn {
+    background-color: transparent;
+    border: solid, white, 1px;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
