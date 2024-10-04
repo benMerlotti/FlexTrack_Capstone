@@ -20,7 +20,22 @@ export const NavBar = () => {
           <Link to="my-routines">My Routines</Link>
         </li>
       </ul>
-      <li className="navbar-logout">Logout</li>
+      {localStorage.getItem("flexTrack_user") ? (
+        <li className="navbar-logout">
+          <Link
+            className="navbar-link"
+            to=""
+            onClick={() => {
+              localStorage.removeItem("flexTrack_user");
+              navigate("/", { replace: true });
+            }}
+          >
+            Logout
+          </Link>
+        </li>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

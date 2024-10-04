@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { createUser, getUserByEmail } from "../../services/userService";
 
@@ -52,53 +52,52 @@ export const Register = (props) => {
   };
 
   return (
-    <main className="auth-container">
-      <form className="auth-form" onSubmit={handleRegister}>
-        <h1 className="header">Learning Moments</h1>
-        <h2>Please Register</h2>
-        <fieldset className="auth-fieldset">
-          <div>
-            <input
-              onChange={updateUser}
-              type="text"
-              id="fullName"
-              className="auth-form-input"
-              placeholder="Enter your name"
-              required
-              autoFocus
-            />
-          </div>
-        </fieldset>
-        <fieldset className="auth-fieldset">
-          <div>
-            <input
-              onChange={updateUser}
-              type="email"
-              id="email"
-              className="auth-form-input"
-              placeholder="Email address"
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset className="auth-fieldset">
-          <div>
-            <input
-              onChange={updateUser}
-              type="number"
-              id="cohort"
-              className="auth-form-input"
-              placeholder="Cohort #"
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset className="auth-fieldset">
-          <div>
-            <button type="submit">Register</button>
-          </div>
-        </fieldset>
-      </form>
-    </main>
+    <body className="login-page">
+      <main className="auth-container">
+        <form className="auth-form" onSubmit={handleRegister}>
+          <img
+            src={"/images/flextrack-logo-blue.png"}
+            alt="Logo"
+            className="landing-logo"
+          />
+          <h2>Please Register</h2>
+          <fieldset className="auth-fieldset">
+            <div>
+              <h3>Full name</h3>
+              <input
+                onChange={updateUser}
+                type="name"
+                id="fullName"
+                className="auth-form-input"
+                required
+                autoFocus
+              />
+            </div>
+          </fieldset>
+          <fieldset className="auth-fieldset">
+            <div>
+              <h3>Email</h3>
+              <input
+                onChange={updateUser}
+                type="email"
+                id="email"
+                className="auth-form-input"
+                required
+              />
+            </div>
+          </fieldset>
+          <fieldset className="auth-fieldset">
+            <div>
+              <button type="submit">Register</button>
+            </div>
+            <div>
+              <Link to="/login">
+                <button type="submit">Back</button>
+              </Link>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+    </body>
   );
 };

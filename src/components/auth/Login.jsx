@@ -33,16 +33,20 @@ export const Login = () => {
       <main className="auth-container">
         <section>
           <form className="auth-form" onSubmit={handleLogin}>
-            <h1 className="header">FLEXTRACK</h1>
-            <h2>Please sign in</h2>
+            <img
+              src={"/images/flextrack-logo-blue.png"}
+              alt="Logo"
+              className="landing-logo"
+            />
+            <h2 className="sign-in">Sign in</h2>
             <fieldset className="auth-fieldset">
               <div>
+                <h3>Email</h3>
                 <input
                   type="email"
                   value={email}
                   className="auth-form-input"
                   onChange={(evt) => set(evt.target.value)}
-                  placeholder="Email address"
                   required
                   autoFocus
                 />
@@ -53,10 +57,10 @@ export const Login = () => {
                 <button type="submit">Sign in</button>
               </div>
             </fieldset>
+            <section className="register-link">
+              <Link to="/register">Not a member yet?</Link>
+            </section>
           </form>
-        </section>
-        <section className="register-link">
-          <Link to="/register">Not a member yet?</Link>
         </section>
       </main>
     </body>

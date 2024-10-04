@@ -5,6 +5,12 @@
       "fullName": "Ben Merlotti",
       "cohort": 3,
       "id": 1
+    },
+    {
+      "email": "Ben@gmail",
+      "fullName": "Ben",
+      "cohort": 0,
+      "id": 2
     }
   ],
   "days": [
