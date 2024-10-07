@@ -51,5 +51,12 @@ html, body {
       height: 80px;
       font-size: 24px;
     }
+
+    .dash-day-buttons-container {
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center;     /* Center vertically */
+      height: 25vh;           /* Full viewport height */
+    }
   }
   

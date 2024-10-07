@@ -10,12 +10,19 @@ html, body {
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .landing-logo {
   height: 50px;
   margin-bottom: 20px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .auth-container {
@@ -25,7 +32,7 @@ html, body {
   align-items: center; /* Center content inside the container */
   padding: 2rem;
   border-radius: 1rem;
-  margin-bottom: 150px;
+  width: 300px;
 }
 
 .auth-form {

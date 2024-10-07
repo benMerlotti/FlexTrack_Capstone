@@ -75,4 +75,14 @@
   button:hover {
     opacity: 0.9;
   }
+
+  @media (max-width: 768px) {
+    .create-routine-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center horizontally */
+      height: 25vh;           /* Full viewport height */
+    }
+  }
+  
   

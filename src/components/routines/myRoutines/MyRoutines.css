@@ -156,4 +156,11 @@
     cursor: pointer;
   }
   
-  
+  @media (max-width: 768px) {
+    .routine-exercise-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+    }
+  }

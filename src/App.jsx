@@ -8,7 +8,7 @@ import { Landing } from "./components/landing/Landing";
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Landing />} />
+      <Route path="/landing" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route

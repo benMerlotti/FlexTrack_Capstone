@@ -29,9 +29,9 @@ export const Login = () => {
   };
 
   return (
-    <body className="login-page">
-      <main className="auth-container">
-        <section>
+    <div className="login-page">
+      <div className="login-container">
+        <div className="auth-container">
           <form className="auth-form" onSubmit={handleLogin}>
             <img
               src={"/images/flextrack-logo-blue.png"}
@@ -61,8 +61,8 @@ export const Login = () => {
               <Link to="/register">Not a member yet?</Link>
             </section>
           </form>
-        </section>
-      </main>
-    </body>
+        </div>
+      </div>
+    </div>
   );
 };
