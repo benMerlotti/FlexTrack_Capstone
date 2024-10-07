@@ -8,7 +8,6 @@ import {
 import "./MyRoutines.css";
 import { getAllDays } from "../../../services/dayService";
 import {
-  deleteExerciseFromRoutine,
   deleteRoutineExercise,
   getAllRoutineExercisesByRoutineId,
 } from "../../../services/exerciseService";
@@ -26,13 +25,13 @@ export const MyRoutines = () => {
     getAllRoutines().then((data) => {
       setMyRoutines(data);
     });
-  }, [myRoutines]);
+  }, []);
 
   useEffect(() => {
     getAllRoutineExercises().then((data) => {
       setRoutineExercises(data);
     });
-  }, [routineExercises]);
+  }, []);
 
   useEffect(() => {
     getAllDays().then((data) => {
@@ -41,10 +40,10 @@ export const MyRoutines = () => {
   }, []);
 
   const handleAssignDay = (day, routineId) => {
-    assignDay(day, routineId);
-
-    getAllRoutines().then((data) => {
-      setMyRoutines(data);
+    assignDay(day, routineId).then(() => {
+      getAllRoutines().then((data) => {
+        setMyRoutines(data);
+      });
     });
   };
 
@@ -52,10 +51,10 @@ export const MyRoutines = () => {
     const day = {
       name: "",
     };
-    assignDay(day, routineId);
-
-    getAllRoutines().then((data) => {
-      setMyRoutines(data);
+    assignDay(day, routineId).then(() => {
+      getAllRoutines().then((data) => {
+        setMyRoutines(data);
+      });
     });
   };
 

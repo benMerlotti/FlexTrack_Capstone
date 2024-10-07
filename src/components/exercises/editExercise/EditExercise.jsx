@@ -57,9 +57,9 @@ export const EditExercise = () => {
       weight: parseInt(currentRoutineEx.weight),
     };
 
-    updateRoutineExercise(toBeSavedExercise, currentRoutineEx);
-
-    navigate("/my-routines");
+    updateRoutineExercise(toBeSavedExercise, currentRoutineEx).then(() => {
+      navigate("/my-routines");
+    });
   };
 
   useEffect(() => {
