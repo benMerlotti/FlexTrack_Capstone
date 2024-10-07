@@ -66,7 +66,14 @@
   }
   
   .routine-exercise-name {
-    flex: 1; /* Adjust the space allocation */
+    text-align: left;
+  }
+
+  .routine-exercise-details {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers the exercise details */
+    width: 500px;
   }
   
   .routine-exercise-sets,
@@ -74,6 +81,8 @@
   .routine-exercise-weight {
     flex: 1;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px
   }
   
@@ -99,6 +108,11 @@
   
   .routine-edit-btn:hover, .routine-delete-btn:hover, .exercise-edit-btn:hover {
     background-color: #3d3f4e;
+  }
+
+  .routine-exercise-edit-btn-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the edit button to the right */
   }
   
   .routine-days {
@@ -159,8 +173,31 @@
   @media (max-width: 768px) {
     .routine-exercise-item {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: center;
       font-size: 10px;
+    }
+
+    .routine-exercise-sets,
+    .routine-exercise-reps,
+    .routine-exercise-weight {
+      display: flex;
+      gap: 10px
+    }
+
+    .routine-exercise-details {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .exercise-edit-btn {
+      font-size: 8px;
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 0px 10px;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }

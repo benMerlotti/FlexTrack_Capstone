@@ -11,6 +11,12 @@
       "fullName": "Ben",
       "cohort": 0,
       "id": 2
+    },
+    {
+      "email": "dave@gmail.com",
+      "fullName": "Dave Berzack",
+      "cohort": 0,
+      "id": 3
     }
   ],
   "days": [
@@ -49,6 +55,27 @@
       "day": "Friday",
       "createdAt": "2024-10-04",
       "id": 5
+    },
+    {
+      "name": "Chest 2",
+      "userId": 1,
+      "day": "Wednesday",
+      "createdAt": "2024-10-07",
+      "id": 6
+    },
+    {
+      "name": "Leg",
+      "userId": 3,
+      "day": "Thursday",
+      "createdAt": "2024-10-07",
+      "id": 7
+    },
+    {
+      "name": "Chest",
+      "userId": 3,
+      "day": "Wednesday",
+      "createdAt": "2024-10-07",
+      "id": 8
     }
   ],
   "exercises": [
@@ -221,6 +248,30 @@
       "reps": 12,
       "weight": 25,
       "id": 20
+    },
+    {
+      "routineId": 6,
+      "exerciseId": 3,
+      "sets": 3,
+      "reps": 3,
+      "weight": 150,
+      "id": 21
+    },
+    {
+      "routineId": 7,
+      "exerciseId": 1,
+      "sets": 3,
+      "reps": 3,
+      "weight": 145,
+      "id": 22
+    },
+    {
+      "routineId": 8,
+      "exerciseId": 2,
+      "sets": 3,
+      "reps": 3,
+      "weight": 145,
+      "id": 23
     }
   ]
 }

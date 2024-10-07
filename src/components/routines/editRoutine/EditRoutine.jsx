@@ -16,9 +16,9 @@ export const EditRoutine = ({ currentUser }) => {
   };
 
   return (
-    <div className="create-routine-container">
-      <section className="create-routine-sub-container">
-        <form className="create-routine-form">
+    <div className="edit-routine-container">
+      <section className="edit-routine-sub-container">
+        <form className="edit-routine-form">
           <h1>Update routine name</h1>
           <input
             className="create-routine-input"

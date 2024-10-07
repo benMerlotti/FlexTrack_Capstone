@@ -13,7 +13,8 @@ import {
 } from "../../../services/exerciseService";
 import { useNavigate } from "react-router-dom";
 
-export const MyRoutines = () => {
+export const MyRoutines = ({ currentUser }) => {
+  const [allRoutines, setAllRoutines] = useState([]);
   const [myRoutines, setMyRoutines] = useState([]);
   const [routineExercises, setRoutineExercises] = useState([]);
   const [allDays, setAllDays] = useState([]);
@@ -23,9 +24,16 @@ export const MyRoutines = () => {
 
   useEffect(() => {
     getAllRoutines().then((data) => {
-      setMyRoutines(data);
+      setAllRoutines(data);
     });
   }, []);
+
+  useEffect(() => {
+    const currentUserRoutines = allRoutines.filter(
+      (routineArray) => routineArray.userId === currentUser.id
+    );
+    setMyRoutines(currentUserRoutines);
+  }, [allRoutines, currentUser.id]);
 
   useEffect(() => {
     getAllRoutineExercises().then((data) => {
@@ -42,7 +50,7 @@ export const MyRoutines = () => {
   const handleAssignDay = (day, routineId) => {
     assignDay(day, routineId).then(() => {
       getAllRoutines().then((data) => {
-        setMyRoutines(data);
+        setAllRoutines(data);
       });
     });
   };
@@ -128,17 +136,19 @@ export const MyRoutines = () => {
                       <div className="routine-exercise-name">
                         {ex.exercise?.name}
                       </div>
-                      <div className="routine-exercise-sets">
-                        <span>Sets</span>
-                        <span>{ex.sets}</span>
-                      </div>
-                      <div className="routine-exercise-reps">
-                        <span>Reps</span>
-                        <span>{ex.reps}</span>
-                      </div>
-                      <div className="routine-exercise-weight">
-                        <span>Weight</span>
-                        <span>{ex.weight} lbs</span>
+                      <div className="routine-exercise-details">
+                        <div className="routine-exercise-sets">
+                          <span>Sets</span>
+                          <span>{ex.sets}</span>
+                        </div>
+                        <div className="routine-exercise-reps">
+                          <span>Reps</span>
+                          <span>{ex.reps}</span>
+                        </div>
+                        <div className="routine-exercise-weight">
+                          <span>Weight</span>
+                          <span>{ex.weight}</span>
+                        </div>
                       </div>
                       <div className="routine-exercise-edit-btn-container">
                         <button
