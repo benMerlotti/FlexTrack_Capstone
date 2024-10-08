@@ -79,13 +79,18 @@ export const AddExercise = () => {
       weight: parseInt(newExercise.weight),
     };
 
-    saveExerciseToRoutine(toBeSavedExercise);
+    saveExerciseToRoutine(toBeSavedExercise).then(() => {
+      getAllRoutineExercises().then((data) => {
+        setAllRoutineEx(data);
+      });
+    });
   };
 
   const handleDeleteExercise = (exercise) => {
-    deleteExerciseFromRoutine(exercise);
-    getAllRoutineExercises().then((data) => {
-      setAllRoutineEx(data);
+    deleteExerciseFromRoutine(exercise).then(() => {
+      getAllRoutineExercises().then((data) => {
+        setAllRoutineEx(data);
+      });
     });
   };
 
@@ -94,7 +99,7 @@ export const AddExercise = () => {
   };
 
   return (
-    <div className="add-exercise-container">
+    <div className="new-routine-container">
       <h1 className="routine-name">
         {currentRoutine ? currentRoutine.name : "Loading..."}
       </h1>
@@ -109,15 +114,12 @@ export const AddExercise = () => {
                     <span className="exercise-name">
                       {current.exercise?.name}
                     </span>
-                    <span className="exercise-details">
-                      Sets: <div className="result">{current.sets}</div>
-                    </span>
-                    <span className="exercise-details">
-                      Reps: <div className="result">{current.reps}</div>
-                    </span>
-                    <span className="exercise-details">
-                      Weight: <div className="result">{current.weight}</div>
-                    </span>
+                    <span className="exercise-details">Sets:</span>
+                    <div className="result">{current.sets}</div>
+                    <span className="exercise-details">Reps:</span>
+                    <div className="result">{current.reps}</div>
+                    <span className="exercise-details">Weight:</span>
+                    <div className="result">{current.weight}</div>
                   </div>
                 </li>
                 <button
@@ -131,70 +133,72 @@ export const AddExercise = () => {
           })}
         </ul>
       </div>
-      <div className="exercise-container">
-        <form className="choose-exercise-form">
-          <select
-            className="choose-exercise-menu"
-            onChange={handleExerciseSelect}
-          >
-            <option value="Choose exercise">Choose exercise</option>
-            {allExercises.map((ex) => (
-              <option value={ex.name} key={ex.id}>
-                {ex.name}
-              </option>
-            ))}
-          </select>
-        </form>
-
-        <form className="add-exercise-form">
-          <div className="exercise-controls">
-            <label>Sets</label>
-            <input
-              className="exercise-input"
-              type="number"
-              name="sets"
-              onChange={(event) => {
-                const newExerciseCopy = { ...newExercise };
-                newExerciseCopy.sets = event.target.value;
-                setNewExercise(newExerciseCopy);
-              }}
-            />
-            <label>Reps</label>
-            <input
-              className="exercise-input"
-              type="number"
-              name="reps"
-              onChange={(event) => {
-                const newExerciseCopy = { ...newExercise };
-                newExerciseCopy.reps = event.target.value;
-                setNewExercise(newExerciseCopy);
-              }}
-            />
-            <label>Weight</label>
-            <input
-              className="exercise-input"
-              type="number"
-              name="weight"
-              onChange={(event) => {
-                const newExerciseCopy = { ...newExercise };
-                newExerciseCopy.weight = event.target.value;
-                setNewExercise(newExerciseCopy);
-              }}
-            />
-            <button
-              className="add-btn"
-              type="submit"
-              onClick={handleSaveExercise}
+      <div className="add-exercise-container">
+        <div className="add-exercise-form-container">
+          <form className="choose-exercise-form">
+            <select
+              className="choose-exercise-menu"
+              onChange={handleExerciseSelect}
             >
-              Add to routine
-            </button>
-          </div>
-        </form>
-      </div>
-      <div className="save-cancel-btn-container">
-        <button className="save-btn" onClick={handleSaveRoutine}>
-          Save Routine
-        </button>
+              <option value="Choose exercise">Choose exercise</option>
+              {allExercises.map((ex) => (
+                <option value={ex.name} key={ex.id}>
+                  {ex.name}
+                </option>
+              ))}
+            </select>
+          </form>
+
+          <form className="add-exercise-form">
+            <div className="exercise-controls">
+              <label>Sets</label>
+              <input
+                className="exercise-input"
+                type="number"
+                name="sets"
+                onChange={(event) => {
+                  const newExerciseCopy = { ...newExercise };
+                  newExerciseCopy.sets = event.target.value;
+                  setNewExercise(newExerciseCopy);
+                }}
+              />
+              <label>Reps</label>
+              <input
+                className="exercise-input"
+                type="number"
+                name="reps"
+                onChange={(event) => {
+                  const newExerciseCopy = { ...newExercise };
+                  newExerciseCopy.reps = event.target.value;
+                  setNewExercise(newExerciseCopy);
+                }}
+              />
+              <label>Weight</label>
+              <input
+                className="exercise-input"
+                type="number"
+                name="weight"
+                onChange={(event) => {
+                  const newExerciseCopy = { ...newExercise };
+                  newExerciseCopy.weight = event.target.value;
+                  setNewExercise(newExerciseCopy);
+                }}
+              />
+            </div>
+          </form>
+        </div>
+        <div className="btn-container">
+          <button
+            className="add-btn"
+            type="submit"
+            onClick={handleSaveExercise}
+          >
+            Add to routine
+          </button>
+          <button className="save-new-routine-btn" onClick={handleSaveRoutine}>
+            Save Routine
+          </button>
+        </div>
       </div>
     </div>
   );

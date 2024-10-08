@@ -42,7 +42,6 @@
   }
   
   li {
-    font-size: 18px;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -78,12 +77,6 @@
   
   button.delete-btn {
     background-color: #ff4b4b;
-  }
-  
-  .add-exercise-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
   
   .add-exercise-btn {

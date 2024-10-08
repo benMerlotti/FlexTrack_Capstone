@@ -5,6 +5,7 @@
   }
   
   .routines-list {
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,17 +64,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
   
   .routine-exercise-name {
+    flex: 1;
     text-align: left;
   }
 
   .routine-exercise-details {
-    flex: 1;
+    flex: 2;
     display: flex;
-    justify-content: center; /* Centers the exercise details */
-    width: 500px;
+    justify-content: space-evenly; /* Centers the exercise details */
   }
   
   .routine-exercise-sets,
@@ -113,6 +115,7 @@
   .routine-exercise-edit-btn-container {
     display: flex;
     justify-content: flex-end; /* Aligns the edit button to the right */
+    flex-shrink: 0;
   }
   
   .routine-days {
@@ -201,3 +204,16 @@
       cursor: pointer;
     }
   }
+
+  @media (max-width: 400px) {
+  .routine-exercise-sets span {
+    display: none;
+  }
+  .routine-exercise-reps span {
+    display: none;
+  }
+
+  .routine-exercise-weight span {
+    display: none;
+  }
+}

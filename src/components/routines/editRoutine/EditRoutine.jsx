@@ -1,18 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./EditRoutine.css";
-import { renameRoutine } from "../../../services/routineService";
+import {
+  getAllRoutines,
+  renameRoutine,
+} from "../../../services/routineService";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const EditRoutine = ({ currentUser }) => {
-  const [routineName, setRoutineName] = useState({ name: "" });
+  const [allRoutines, setAllRoutines] = useState([]);
+  const [currentRoutine, setCurrentRoutine] = useState({ name: "" });
   const { routineId } = useParams();
 
   const navigate = useNavigate();
 
-  const handleSaveNewRoutineName = () => {
-    renameRoutine(routineName, routineId);
+  useEffect(() => {
+    getAllRoutines().then((data) => {
+      setAllRoutines(data);
+    });
+  }, []);
 
-    navigate("/my-routines");
+  useEffect(() => {
+    const matchedRoutine = allRoutines.find(
+      (routine) => routine.id === parseInt(routineId)
+    );
+    if (matchedRoutine) {
+      setCurrentRoutine(matchedRoutine);
+    }
+  }, [allRoutines, routineId]);
+
+  const handleSaveNewRoutineName = () => {
+    renameRoutine(currentRoutine, routineId).then(() => {
+      navigate("/my-routines");
+    });
   };
 
   return (
@@ -22,10 +41,11 @@ export const EditRoutine = ({ currentUser }) => {
           <h1>Update routine name</h1>
           <input
             className="create-routine-input"
+            value={currentRoutine.name}
             onChange={(event) => {
-              const routineCopy = { ...routineName };
+              const routineCopy = { ...currentRoutine };
               routineCopy.name = event.target.value;
-              setRoutineName(routineCopy);
+              setCurrentRoutine(routineCopy);
             }}
           ></input>
         </form>

@@ -61,7 +61,7 @@ export const MyRoutines = ({ currentUser }) => {
     };
     assignDay(day, routineId).then(() => {
       getAllRoutines().then((data) => {
-        setMyRoutines(data);
+        setAllRoutines(data);
       });
     });
   };
@@ -82,7 +82,7 @@ export const MyRoutines = ({ currentUser }) => {
           return getAllRoutines();
         })
         .then((data) => {
-          setMyRoutines(data); // Update the state with the latest routines
+          setAllRoutines(data); // Update the state with the latest routines
         })
         .catch((error) => {
           console.error("Error deleting routine or exercises:", error);
@@ -104,91 +104,93 @@ export const MyRoutines = ({ currentUser }) => {
         {myRoutines.length === 0 ? (
           <p>No routines found. Start creating some!</p>
         ) : (
-          myRoutines.map((routine) => {
-            const matchedExercises = routineExercises.filter(
-              (ex) => ex.routineId === routine.id
-            );
-            return (
-              <div key={routine.id} className="routine-card">
-                <div className="routine-header">
-                  <h2 className="routine-name">{routine.name}</h2>
-                  <div className="routine-actions">
-                    <button
-                      className="routine-edit-btn"
-                      onClick={() => handleRenameRoutine(routine.id)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="routine-delete-btn"
-                      onClick={() => handleDeleteRoutine(routine.id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
-                <div className="routine-exercises">
-                  <div className="routine-exercises-header">
-                    <header>Exercises</header>
-                  </div>
-                  {matchedExercises.map((ex) => (
-                    <div key={ex.id} className="routine-exercise-item">
-                      <div className="routine-exercise-name">
-                        {ex.exercise?.name}
-                      </div>
-                      <div className="routine-exercise-details">
-                        <div className="routine-exercise-sets">
-                          <span>Sets</span>
-                          <span>{ex.sets}</span>
-                        </div>
-                        <div className="routine-exercise-reps">
-                          <span>Reps</span>
-                          <span>{ex.reps}</span>
-                        </div>
-                        <div className="routine-exercise-weight">
-                          <span>Weight</span>
-                          <span>{ex.weight}</span>
-                        </div>
-                      </div>
-                      <div className="routine-exercise-edit-btn-container">
-                        <button
-                          className="exercise-edit-btn"
-                          onClick={() => handleEditExercise(ex.id)}
-                        >
-                          Edit
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="routine-days">
-                  <h4>Assign to day</h4>
-                  <div className="day-buttons">
-                    {allDays.map((day) => (
+          myRoutines
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            .map((routine) => {
+              const matchedExercises = routineExercises.filter(
+                (ex) => ex.routineId === routine.id
+              );
+              return (
+                <div key={routine.id} className="routine-card">
+                  <div className="routine-header">
+                    <h2 className="routine-name">{routine.name}</h2>
+                    <div className="routine-actions">
                       <button
-                        className={`day-btn ${
-                          routine.day === day.name ? "assigned" : ""
-                        }`}
-                        key={day.id}
-                        onClick={() => handleAssignDay(day, routine.id)}
+                        className="routine-edit-btn"
+                        onClick={() => handleRenameRoutine(routine.id)}
                       >
-                        {day.name.charAt(0)}
+                        Edit
                       </button>
+                      <button
+                        className="routine-delete-btn"
+                        onClick={() => handleDeleteRoutine(routine.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                  <div className="routine-exercises">
+                    <div className="routine-exercises-header">
+                      <header>Exercises</header>
+                    </div>
+                    {matchedExercises.map((ex) => (
+                      <div key={ex.id} className="routine-exercise-item">
+                        <div className="routine-exercise-name">
+                          {ex.exercise?.name}
+                        </div>
+                        <div className="routine-exercise-details">
+                          <div className="routine-exercise-sets">
+                            <span>Sets</span>
+                            <div>{ex.sets}</div>
+                          </div>
+                          <div className="routine-exercise-reps">
+                            <span>Reps</span>
+                            <div>{ex.reps}</div>
+                          </div>
+                          <div className="routine-exercise-weight">
+                            <span>Weight</span>
+                            <div>{ex.weight}</div>
+                          </div>
+                        </div>
+                        <div className="routine-exercise-edit-btn-container">
+                          <button
+                            className="exercise-edit-btn"
+                            onClick={() => handleEditExercise(ex.id)}
+                          >
+                            Edit
+                          </button>
+                        </div>
+                      </div>
                     ))}
                   </div>
-                  <div className="unassign-btn-container">
-                    <button
-                      className="unassign-btn"
-                      onClick={() => handleClearDay(routine.id)}
-                    >
-                      Clear
-                    </button>
+
+                  <div className="routine-days">
+                    <h4>Assign to day</h4>
+                    <div className="day-buttons">
+                      {allDays.map((day) => (
+                        <button
+                          className={`day-btn ${
+                            routine.day === day.name ? "assigned" : ""
+                          }`}
+                          key={day.id}
+                          onClick={() => handleAssignDay(day, routine.id)}
+                        >
+                          {day.name.charAt(0)}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="unassign-btn-container">
+                      <button
+                        className="unassign-btn"
+                        onClick={() => handleClearDay(routine.id)}
+                      >
+                        Clear
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })
+              );
+            })
         )}
       </div>
     </div>

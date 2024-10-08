@@ -17,6 +17,18 @@
       "fullName": "Dave Berzack",
       "cohort": 0,
       "id": 3
+    },
+    {
+      "email": "Susanmerlotti@gmail.com",
+      "fullName": "Susan Merlotti",
+      "cohort": 0,
+      "id": 4
+    },
+    {
+      "email": "jared@gmail.com",
+      "fullName": "Jared",
+      "cohort": 0,
+      "id": 5
     }
   ],
   "days": [
@@ -45,7 +57,7 @@
     {
       "name": "Back / Biceps",
       "userId": 1,
-      "day": "Wednesday",
+      "day": "",
       "createdAt": "2024-10-04",
       "id": 4
     },
@@ -57,24 +69,17 @@
       "id": 5
     },
     {
-      "name": "Chest 2",
-      "userId": 1,
-      "day": "Wednesday",
-      "createdAt": "2024-10-07",
-      "id": 6
-    },
-    {
-      "name": "Leg",
+      "name": "Dave's Workout 2",
       "userId": 3,
-      "day": "Thursday",
-      "createdAt": "2024-10-07",
+      "day": "Monday",
+      "createdAt": "2024-10-08",
       "id": 7
     },
     {
-      "name": "Chest",
-      "userId": 3,
+      "name": "Jared's Routine",
+      "userId": 5,
       "day": "Wednesday",
-      "createdAt": "2024-10-07",
+      "createdAt": "2024-10-08",
       "id": 8
     }
   ],
@@ -154,62 +159,6 @@
   ],
   "routineExercises": [
     {
-      "routineId": 4,
-      "exerciseId": 3,
-      "sets": 3,
-      "reps": 8,
-      "weight": 160,
-      "id": 9
-    },
-    {
-      "routineId": 4,
-      "exerciseId": 9,
-      "sets": 3,
-      "reps": 12,
-      "weight": 25,
-      "id": 10
-    },
-    {
-      "routineId": 4,
-      "exerciseId": 10,
-      "sets": 3,
-      "reps": 12,
-      "weight": 120,
-      "id": 11
-    },
-    {
-      "routineId": 4,
-      "exerciseId": 11,
-      "sets": 3,
-      "reps": 12,
-      "weight": 60,
-      "id": 12
-    },
-    {
-      "routineId": 4,
-      "exerciseId": 12,
-      "sets": 3,
-      "reps": 12,
-      "weight": 100,
-      "id": 13
-    },
-    {
-      "routineId": 4,
-      "exerciseId": 13,
-      "sets": 3,
-      "reps": 12,
-      "weight": 15,
-      "id": 14
-    },
-    {
-      "routineId": 4,
-      "exerciseId": 14,
-      "sets": 3,
-      "reps": 12,
-      "weight": 45,
-      "id": 15
-    },
-    {
       "routineId": 5,
       "exerciseId": 1,
       "sets": 3,
@@ -250,28 +199,20 @@
       "id": 20
     },
     {
-      "routineId": 6,
-      "exerciseId": 3,
-      "sets": 3,
-      "reps": 3,
-      "weight": 150,
-      "id": 21
-    },
-    {
       "routineId": 7,
       "exerciseId": 1,
-      "sets": 3,
-      "reps": 3,
-      "weight": 145,
-      "id": 22
+      "sets": 5,
+      "reps": 4,
+      "weight": 1000,
+      "id": 24
     },
     {
       "routineId": 8,
-      "exerciseId": 2,
+      "exerciseId": 9,
       "sets": 3,
       "reps": 3,
-      "weight": 145,
-      "id": 23
+      "weight": 30,
+      "id": 25
     }
   ]
 }
