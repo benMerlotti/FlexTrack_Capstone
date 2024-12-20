@@ -2,7 +2,7 @@
 
 **FlexTrack** is a workout tracker app designed to help fitness enthusiasts create, organize, and track their workout routines efficiently. This project demonstrates my ability to design and develop responsive web applications, manage complex data structures, and build intuitive user interfaces.
 
-![Description of the screenshot](images/Screenshots/Screenshot 2024-12-19 at 6.46.51 PM.png)
+![Description of the screenshot](images/Screenshots/Screenshot2024-12-19at6.46.51PM.png)
 
 ---
 
