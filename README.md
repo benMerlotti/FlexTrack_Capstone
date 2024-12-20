@@ -78,5 +78,7 @@ I’m Ben Merlotti, a creative and multidisciplinary individual transitioning in
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/benmerlotti/)
 
 ![Description of the screenshot](images/Screenshots/Screenshot4.png)
+---
 ![Description of the screenshot](images/Screenshots/Screenshot2.png)
+---
 ![Description of the screenshot](images/Screenshots/Screenshot3.png)
