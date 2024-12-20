@@ -1,9 +1,9 @@
 export const getAllExercises = () => {
-  return fetch("http://localhost:8088/exercises").then((res) => res.json());
+  return fetch("http://localhost:3000/exercises").then((res) => res.json());
 };
 
 export const saveExerciseToRoutine = (exerciseData) => {
-  return fetch("http://localhost:8088/routineExercises", {
+  return fetch("http://localhost:3000/routineExercises", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +13,7 @@ export const saveExerciseToRoutine = (exerciseData) => {
 };
 
 export const deleteExerciseFromRoutine = (exercise) => {
-  return fetch(`http://localhost:8088/routineExercises/${exercise.id}`, {
+  return fetch(`http://localhost:3000/routineExercises/${exercise.id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -23,18 +23,18 @@ export const deleteExerciseFromRoutine = (exercise) => {
 
 export const getAllRoutineExercisesByRoutineId = (routineId) => {
   return fetch(
-    `http://localhost:8088/routineExercises?routineId=${routineId}`
+    `http://localhost:3000/routineExercises?routineId=${routineId}`
   ).then((res) => res.json());
 };
 
 export const deleteRoutineExercise = (exerciseId) => {
-  return fetch(`http://localhost:8088/routineExercises/${exerciseId}`, {
+  return fetch(`http://localhost:3000/routineExercises/${exerciseId}`, {
     method: "DELETE",
   });
 };
 
 export const updateRoutineExercise = (newRexObj, updatedRex) => {
-  return fetch(`http://localhost:8088/routineExercises/${updatedRex.id}`, {
+  return fetch(`http://localhost:3000/routineExercises/${updatedRex.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

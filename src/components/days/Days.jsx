@@ -7,7 +7,8 @@ import {
 } from "../../services/routineService";
 import "./Days.css";
 
-export const Days = () => {
+// eslint-disable-next-line react/prop-types
+export const Days = ({ currentUser }) => {
   const [allDays, setAllDays] = useState([]);
   const [allRoutines, setAllRoutines] = useState([]);
   const [routineExercises, setRoutineExercises] = useState([]);
@@ -37,10 +38,17 @@ export const Days = () => {
     (routine) => routine.day === currentDay.name
   );
 
+  const matchedRoutinesToUser = matchedRoutines.filter(
+    // eslint-disable-next-line react/prop-types
+    (routine) => routine.userId === currentUser.id
+  );
+
+  console.log(matchedRoutinesToUser);
+
   return matchedRoutines.length > 0 ? (
     <div className="day-routine-container">
       <div className="day-routine-list">
-        {matchedRoutines.map((dayRoutine) => {
+        {matchedRoutinesToUser.map((dayRoutine) => {
           const matchedExercises = routineExercises.filter(
             (ex) => ex.routineId === dayRoutine.id
           );

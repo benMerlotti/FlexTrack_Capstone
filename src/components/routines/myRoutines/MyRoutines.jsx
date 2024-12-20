@@ -13,13 +13,12 @@ import {
 } from "../../../services/exerciseService";
 import { useNavigate } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 export const MyRoutines = ({ currentUser }) => {
   const [allRoutines, setAllRoutines] = useState([]);
   const [myRoutines, setMyRoutines] = useState([]);
   const [routineExercises, setRoutineExercises] = useState([]);
   const [allDays, setAllDays] = useState([]);
-  const [routineExercisesToBeDeleted, setRoutineExercisesToBeDeleted] =
-    useState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,9 +29,11 @@ export const MyRoutines = ({ currentUser }) => {
 
   useEffect(() => {
     const currentUserRoutines = allRoutines.filter(
+      // eslint-disable-next-line react/prop-types
       (routineArray) => routineArray.userId === currentUser.id
     );
     setMyRoutines(currentUserRoutines);
+    // eslint-disable-next-line react/prop-types
   }, [allRoutines, currentUser.id]);
 
   useEffect(() => {

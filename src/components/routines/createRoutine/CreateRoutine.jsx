@@ -3,6 +3,7 @@ import "./CreateRoutine.css";
 import { saveRoutine } from "../../../services/routineService";
 import { useNavigate } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 export const CreateRoutine = ({ currentUser }) => {
   const [routine, setRoutine] = useState({ name: "", day: "" });
 
@@ -16,6 +17,7 @@ export const CreateRoutine = ({ currentUser }) => {
   const handleSaveRoutine = () => {
     const newRoutine = {
       name: routine.name,
+      // eslint-disable-next-line react/prop-types
       userId: currentUser.id,
       day: routine.day,
       createdAt: getCurrentDate(),

@@ -55,13 +55,6 @@
   ],
   "routines": [
     {
-      "name": "Back / Biceps",
-      "userId": 1,
-      "day": "",
-      "createdAt": "2024-10-04",
-      "id": 4
-    },
-    {
       "name": "Legs",
       "userId": 1,
       "day": "Friday",
@@ -81,6 +74,20 @@
       "day": "Wednesday",
       "createdAt": "2024-10-08",
       "id": 8
+    },
+    {
+      "name": "Chest / Triceps",
+      "userId": 1,
+      "day": "Monday",
+      "createdAt": "2024-10-09",
+      "id": 9
+    },
+    {
+      "name": "Back / Biceps",
+      "userId": 1,
+      "day": "Wednesday",
+      "createdAt": "2024-10-09",
+      "id": 10
     }
   ],
   "exercises": [
@@ -213,6 +220,102 @@
       "reps": 3,
       "weight": 30,
       "id": 25
+    },
+    {
+      "routineId": 9,
+      "exerciseId": 2,
+      "sets": 3,
+      "reps": 8,
+      "weight": 150,
+      "id": 26
+    },
+    {
+      "routineId": 9,
+      "exerciseId": 4,
+      "sets": 3,
+      "reps": 12,
+      "weight": 60,
+      "id": 27
+    },
+    {
+      "routineId": 9,
+      "exerciseId": 5,
+      "sets": 3,
+      "reps": 12,
+      "weight": 40,
+      "id": 28
+    },
+    {
+      "routineId": 9,
+      "exerciseId": 6,
+      "sets": 3,
+      "reps": 12,
+      "weight": 40,
+      "id": 29
+    },
+    {
+      "routineId": 9,
+      "exerciseId": 7,
+      "sets": 3,
+      "reps": 12,
+      "weight": 35,
+      "id": 30
+    },
+    {
+      "routineId": 9,
+      "exerciseId": 8,
+      "sets": 3,
+      "reps": 12,
+      "weight": 35,
+      "id": 31
+    },
+    {
+      "routineId": 10,
+      "exerciseId": 3,
+      "sets": 3,
+      "reps": 8,
+      "weight": 145,
+      "id": 32
+    },
+    {
+      "routineId": 10,
+      "exerciseId": 9,
+      "sets": 3,
+      "reps": 12,
+      "weight": 25,
+      "id": 33
+    },
+    {
+      "routineId": 10,
+      "exerciseId": 11,
+      "sets": 3,
+      "reps": 12,
+      "weight": 10,
+      "id": 34
+    },
+    {
+      "routineId": 10,
+      "exerciseId": 10,
+      "sets": 3,
+      "reps": 12,
+      "weight": 90,
+      "id": 35
+    },
+    {
+      "routineId": 10,
+      "exerciseId": 12,
+      "sets": 3,
+      "reps": 12,
+      "weight": 0,
+      "id": 36
+    },
+    {
+      "routineId": 10,
+      "exerciseId": 13,
+      "sets": 3,
+      "reps": 12,
+      "weight": 15,
+      "id": 37
     }
   ]
 }

@@ -1,15 +1,15 @@
 export const getAllRoutines = () => {
-  return fetch("http://localhost:8088/routines").then((res) => res.json());
+  return fetch("http://localhost:3000/routines").then((res) => res.json());
 };
 
 export const getAllRoutineExercises = () => {
   return fetch(
-    "http://localhost:8088/routineExercises?_expand=exercise&_expand=routine"
+    "http://localhost:3000/routineExercises?_expand=exercise&_expand=routine"
   ).then((res) => res.json());
 };
 
 export const saveRoutine = (routineData) => {
-  return fetch("http://localhost:8088/routines", {
+  return fetch("http://localhost:3000/routines", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const saveRoutine = (routineData) => {
 };
 
 export const assignDay = (day, routineId) => {
-  return fetch(`http://localhost:8088/routines/${routineId}`, {
+  return fetch(`http://localhost:3000/routines/${routineId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -29,13 +29,13 @@ export const assignDay = (day, routineId) => {
 };
 
 export const deleteRoutine = (routineId) => {
-  return fetch(`http://localhost:8088/routines/${routineId}`, {
+  return fetch(`http://localhost:3000/routines/${routineId}`, {
     method: "DELETE",
   });
 };
 
 export const renameRoutine = (newName, routineId) => {
-  return fetch(`http://localhost:8088/routines/${routineId}`, {
+  return fetch(`http://localhost:3000/routines/${routineId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
