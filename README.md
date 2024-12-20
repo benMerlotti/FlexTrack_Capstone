@@ -76,3 +76,7 @@ I created FlexTrack to demonstrate my ability to combine design, functionality, 
 I’m Ben Merlotti, a creative and multidisciplinary individual transitioning into full-stack development. FlexTrack is a reflection of my passion for clean design, functional interfaces, and building tools that make a difference.
 
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/benmerlotti/)
+
+![Description of the screenshot](images/Screenshots/Screenshot4.png)
+![Description of the screenshot](images/Screenshots/Screenshot2.png)
+![Description of the screenshot](images/Screenshots/Screenshot3.png)
